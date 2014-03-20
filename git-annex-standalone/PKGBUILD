@@ -4,7 +4,7 @@
 
 pkgname=git-annex-standalone
 pkgver=5.20140306
-pkgrel=4
+pkgrel=5
 pkgdesc='Standalone precompiled version of git-annex bundled with libs and utils, batteries included.'
 arch=('i686' 'x86_64')
 url='http://git-annex.branchable.com/'
@@ -42,24 +42,18 @@ package() {
 
     for file in ${_rmbin[@]} ; do
         msg "  Removing $file from executables..."
-        rm "$pkgdir/opt/git-annex.linux/bin/$file" || true # curl and lsof do not exist in 64-bit build"
-        #msg "  Removing $file from shimmed excutables..."
-        #rm -r "$pkgdir/opt/git-annex.linux/shimmed/$file" || true # curl and lsof do not exist in 64-bit build"
+        find "$pkgdir/opt/git-annex.linux/bin/" -name "$file" -executable -delete
+        find "$pkgdir/opt/git-annex.linux/shimmed/" -name "$file" -delete
     done
 
-    ## clean up git from the shimmed directory too
-    #for file in $(ls "$pkgdir/opt/git-annex.linux/git-core/")
-    #do
-        #ls -al "$pkgdir/opt/git-annex.linux/shimmed/$file"
-        #rm -r "$pkgdir/opt/git-annex.linux/shimmed/$file" || true # ignore missing files
-    #done
+    msg "  Removing git-core componets form executables..."
+    find "$pkgdir/opt/git-annex.linux/git-core/" -executable \
+        -execdir test -e ../shimmed/{} \; \
+        -execdir rm -r ../shimmed/{} \;
+    rm -r "$pkgdir"/opt/git-annex.linux/git-core
 
-    # Remove runshell git wrapper that causes recursive loops for some systems
-    rm "$pkgdir/opt/git-annex.linux/git"
-    rm "$pkgdir/opt/git-annex.linux/git-receive-pack"
-    rm "$pkgdir/opt/git-annex.linux/git-upload-pack"
-    rm "$pkgdir/opt/git-annex.linux/git-shell"
-    rm -r "$pkgdir/opt/git-annex.linux/git-core"
+    msg "  Removing runshell componets form executables..."
+    rm "$pkgdir"/opt/git-annex.linux/git{,-receive-pack,-upload-pack,-shell}
 
     # 64-bit curl fix (endless loop in assistant when creating new repo - incompatible curl bin (system) and lib (package))
     if [[ $CARCH == "x86_64" ]] ; then
