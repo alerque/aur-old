@@ -36,7 +36,7 @@ fi
 package() {
     mkdir -p "$pkgdir/opt" "$pkgdir/usr/bin"
 
-    cp -R "$srcdir/git-annex.linux" "$pkgdir/opt/"
+    cp -a "$srcdir/git-annex.linux" "$pkgdir/opt/"
 
     patch "$pkgdir/opt/git-annex.linux/runshell" "$srcdir/runshell.patch"
 
