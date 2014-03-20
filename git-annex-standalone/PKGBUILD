@@ -1,10 +1,10 @@
 # Original Author: Sairon Istyar <saironiq@gmail.com>
-# Contributor: Jon <jonathan.stott@gmail.com> (See https://gist.github.com/namelessjon/9651948)
+# Contributor: Jon <jonathan.stott@gmail.com>
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
 
 pkgname=git-annex-standalone
 pkgver=5.20140306
-pkgrel=5
+pkgrel=6
 pkgdesc='Standalone precompiled version of git-annex bundled with libs and utils, batteries included.'
 arch=('i686' 'x86_64')
 url='http://git-annex.branchable.com/'
