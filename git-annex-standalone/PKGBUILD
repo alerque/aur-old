@@ -4,7 +4,7 @@
 
 pkgname=git-annex-standalone
 pkgver=5.20140306
-pkgrel=3
+pkgrel=4
 pkgdesc='Standalone precompiled version of git-annex bundled with libs and utils, batteries included.'
 arch=('i686' 'x86_64')
 url='http://git-annex.branchable.com/'
@@ -17,7 +17,7 @@ sha256sums=('c7d12ba3f3a00736d0d22e18e76721314d461561adcf48cbd102413e5e75be92'
 
 # binaries to remove from resulting standalone package
 _rmbin=('cp' 'curl' 'git' 'gpg' 'lsof' 'rsync' 'sh' 'sha1sum' 'sha224sum' \
-        'sha256sum' 'sha384sum' 'sha512sum' 'ssh' 'wget' 'xargs' 'git-remote-gcrypt' \
+        'sha256sum' 'sha384sum' 'sha512sum' 'ssh' 'wget' 'xargs' \
         'ssh-keygen' 'tar' 'git-shell' 'git-upload-pack' 'git-receive-pack' 'gunzip' )
 
 # all of these can be left out if not deleting $_rmbin binaries
@@ -36,7 +36,7 @@ fi
 package() {
     mkdir -p "$pkgdir/opt" "$pkgdir/usr/bin"
 
-    cp -R "$srcdir/git-annex.linux" "$pkgdir/opt/"
+    cp -a "$srcdir/git-annex.linux" "$pkgdir/opt/"
 
     patch "$pkgdir/opt/git-annex.linux/runshell" "$srcdir/runshell.patch"
 
