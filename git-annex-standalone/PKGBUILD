@@ -1,11 +1,15 @@
-# Original Author: Sairon Istyar <saironiq@gmail.com>
-# Contributor: Jon <jonathan.stott@gmail.com>
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
-
+# Contributor: Jon <jonathan.stott@gmail.com>
+# Original Author: Sairon Istyar <saironiq@gmail.com>
+#
+# Note:
+#      All suggestions welcome, but if convenient please submit paches via Github:
+#      https://github.com/alerque/aur/tree/master/git-annex-standalone
+#
 pkgname=git-annex-standalone
 pkgver=5.20140306
 pkgrel=6
-pkgdesc='Standalone precompiled version of git-annex bundled with libs and utils, batteries included.'
+pkgdesc='Standalone precompiled version of git-annex with no haskel dependencies, batteries included.'
 arch=('i686' 'x86_64')
 url='http://git-annex.branchable.com/'
 license=('GPL3')
@@ -46,13 +50,13 @@ package() {
         find "$pkgdir/opt/git-annex.linux/shimmed/" -name "$file" -delete
     done
 
-    msg "  Removing git-core componets form executables..."
+    msg "  Removing git-core componets from executables..."
     find "$pkgdir/opt/git-annex.linux/git-core/" -executable \
         -execdir test -e ../shimmed/{} \; \
         -execdir rm -r ../shimmed/{} \;
     rm -r "$pkgdir"/opt/git-annex.linux/git-core
 
-    msg "  Removing runshell componets form executables..."
+    msg "  Removing runshell componets from executables..."
     rm "$pkgdir"/opt/git-annex.linux/git{,-receive-pack,-upload-pack,-shell}
 
     # 64-bit curl fix (endless loop in assistant when creating new repo - incompatible curl bin (system) and lib (package))
