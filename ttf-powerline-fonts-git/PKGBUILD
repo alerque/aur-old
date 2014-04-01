@@ -1,26 +1,30 @@
-# Maintainer: Ellis Kenyo <elken.tdos at gmail.com>
+# Maintainer: Caleb Maclennan <caleb@alerque.com>
+# Contributor: Ellis Kenyo <elken.tdos at gmail.com>
+#
+# Any suggestions welcome; please submit paches via Github:
+# https://github.com/alerque/aur/tree/master/ttf-powerline-fonts-git
 
 pkgname=ttf-powerline-fonts-git
-_gitname=powerline-fonts
 pkgver=20131205
 pkgrel=1
+pkgdesc="Patched fonts for Powerline users"
 depends=('fontconfig' 'xorg-font-utils')
+arch=('any')
 makedepends=('git')
 url=('git://github.com/Lokaltog/powerline-fonts')
 license=('Apache' 'custom:"OFL"' 'custom:"UFL"' 'custom:"DFL "')
-pkgdesc="Patched fonts for Powerline users"
-arch=('any')
-source=('git+https://github.com/Lokaltog/powerline-fonts.git' )
-
+source=('git://github.com/Lokaltog/powerline-fonts.git' )
 md5sums=('SKIP')
 
 pkgver() {
-	date +%Y%m%d
+    cd "$srcdir/${pkgname%-git}"
+    #git describe --long --tags | sed 's/^v//;s/-/_/g'
+    printf "0_%s_%s" "$(git rev-list --count HEAD)" "$(git rev-parse --short HEAD)"
 }
 
 package() {
+    cd "$srcdir/${pkgname%-git}"
 
-	cd $srcdir/$_gitname
 	install -dm644 $pkgdir/usr/share/fonts/{TTF,OTF}
 	install -dm755 "$pkgdir/usr/share/licenses/$pkgname"
 
@@ -33,7 +37,8 @@ package() {
 	fi
 
 	find . -iname "*.ttf" -exec install -m644 {} "$pkgdir/usr/share/fonts/TTF" \;
-	find . -iname "*.otf" -exec install -m644 {} "$pkgdir/usr/share/fonts/OTF" \;	
+	find . -iname "*.otf" -exec install -m644 {} "$pkgdir/usr/share/fonts/OTF" \;
+
 	cp -vR --parents */*.txt "$pkgdir/usr/share/licenses/$pkgname"
 }
 

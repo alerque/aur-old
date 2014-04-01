@@ -1,6 +1,9 @@
 # Maintainer: Caleb Maclennan <caleb@alerque.com>
+#
+# Any suggestions welcome; please submit paches via Github:
+# https://github.com/alerque/aur/tree/master/programmers-turkish-f-git
+
 pkgname=programmers-turkish-f-git
-_pkgname=programmers-turkish-f
 _branch=master
 pkgver=0
 pkgrel=0
@@ -10,8 +13,8 @@ url="https://github.com/alerque/programmers-turkish-f"
 license=('GPL3')
 depends=('kbd' 'libxslt')
 makedepends=('coreutils')
-conflicts=("$_pkgname")
-source=("git://github.com/alerque/$_pkgname.git#branch=$_branch")
+conflicts=("${pkgname%-git}")
+source=("git://github.com/alerque/${pkgname%-git}.git#branch=$_branch")
 md5sums=('SKIP')
 
 #noextract=("http://kaufmann.no/downloads/linux/dvp-1_2_1.map.gz")
@@ -43,7 +46,7 @@ md5sums=('SKIP')
 #}
 
 package() {
-  cd "$srcdir/$_pkgname"
+  cd "$srcdir/${pkgname%-git}"
   find
   #mkdir -p $pkgdir/usr/share/X11/xkb/{symbols,types}
   #chmod +x *.sh
