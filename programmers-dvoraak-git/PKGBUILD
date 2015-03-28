@@ -11,7 +11,7 @@ pkgdesc="An adaptation of programmers-dvorak for the Turkish F keyboard layout."
 arch=(any)
 url="https://github.com/alerque/programmers-turkish-f"
 license=('GPL3')
-depends=('kbd' 'libxslt')
+depends=('kbd' 'libxslt' 'programmers-dvorak')
 makedepends=('coreutils')
 conflicts=("${pkgname%-git}")
 source=("git://github.com/alerque/${pkgname%-git}.git#branch=$_branch")
