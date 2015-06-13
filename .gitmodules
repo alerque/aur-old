@@ -1,0 +1,84 @@
+[submodule "aguilas"]
+	path = aguilas
+	url = ssh+git://aur@aur4.archlinux.org:22/aguilas.git/
+[submodule "aspell-tr"]
+	path = aspell-tr
+	url = ssh+git://aur@aur4.archlinux.org:22/aspell-tr.git/
+[submodule "cups-xerox-phaser-6500"]
+	path = cups-xerox-phaser-6500
+	url = ssh+git://aur@aur4.archlinux.org:22/cups-xerox-phaser-6500.git/
+[submodule "diradm-git"]
+	path = diradm-git
+	url = ssh+git://aur@aur4.archlinux.org:22/diradm-git.git/
+[submodule "ec2-metadata"]
+	path = ec2-metadata
+	url = ssh+git://aur@aur4.archlinux.org:22/ec2-metadata.git/
+[submodule "freecheck"]
+	path = freecheck
+	url = ssh+git://aur@aur4.archlinux.org:22/freecheck.git/
+[submodule "freecheck-git"]
+	path = freecheck-git
+	url = ssh+git://aur@aur4.archlinux.org:22/freecheck-git.git/
+[submodule "git-annex"]
+	path = git-annex
+	url = ssh+git://aur@aur4.archlinux.org:22/git-annex.git/
+[submodule "git-annex-bin"]
+	path = git-annex-bin
+	url = ssh+git://aur@aur4.archlinux.org:22/git-annex-bin.git/
+[submodule "git-annex-git"]
+	path = git-annex-git
+	url = ssh+git://aur@aur4.archlinux.org:22/git-annex-git.git/
+[submodule "git-crypt"]
+	path = git-crypt
+	url = ssh+git://aur@aur4.archlinux.org:22/git-crypt.git/
+[submodule "git-crypt-git"]
+	path = git-crypt-git
+	url = ssh+git://aur@aur4.archlinux.org:22/git-crypt-git.git/
+[submodule "gitzone"]
+	path = gitzone
+	url = ssh+git://aur@aur4.archlinux.org:22/gitzone.git/
+[submodule "gnumicr"]
+	path = gnumicr
+	url = ssh+git://aur@aur4.archlinux.org:22/gnumicr.git/
+[submodule "imgv"]
+	path = imgv
+	url = ssh+git://aur@aur4.archlinux.org:22/imgv.git/
+[submodule "keybase"]
+	path = keybase
+	url = ssh+git://aur@aur4.archlinux.org:22/keybase.git/
+[submodule "ldapauthmanager"]
+	path = ldapauthmanager
+	url = ssh+git://aur@aur4.archlinux.org:22/ldapauthmanager.git/
+[submodule "lyricue"]
+	path = lyricue
+	url = ssh+git://aur@aur4.archlinux.org:22/lyricue.git/
+[submodule "nodejs-node-inspector"]
+	path = nodejs-node-inspector
+	url = ssh+git://aur@aur4.archlinux.org:22/nodejs-node-inspector.git/
+[submodule "openldap-migrationtools"]
+	path = openldap-migrationtools
+	url = ssh+git://aur@aur4.archlinux.org:22/openldap-migrationtools.git/
+[submodule "perl-class-accessor-lvalue"]
+	path = perl-class-accessor-lvalue
+	url = ssh+git://aur@aur4.archlinux.org:22/perl-class-accessor-lvalue.git/
+[submodule "perl-net-bonjour"]
+	path = perl-net-bonjour
+	url = ssh+git://aur@aur4.archlinux.org:22/perl-net-bonjour.git/
+[submodule "perl-net-rendezvous-publish"]
+	path = perl-net-rendezvous-publish
+	url = ssh+git://aur@aur4.archlinux.org:22/perl-net-rendezvous-publish.git/
+[submodule "powerline-fonts"]
+	path = powerline-fonts
+	url = ssh+git://aur@aur4.archlinux.org:22/powerline-fonts.git/
+[submodule "powerline-fonts-git"]
+	path = powerline-fonts-git
+	url = ssh+git://aur@aur4.archlinux.org:22/powerline-fonts-git.git/
+[submodule "pwm"]
+	path = pwm
+	url = ssh+git://aur@aur4.archlinux.org:22/pwm.git/
+[submodule "stund"]
+	path = stund
+	url = ssh+git://aur@aur4.archlinux.org:22/stund.git/
+[submodule "wacom-utility"]
+	path = wacom-utility
+	url = ssh+git://aur@aur4.archlinux.org:22/wacom-utility.git/
