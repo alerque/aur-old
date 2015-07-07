@@ -85,3 +85,6 @@
 [submodule "sile-git"]
 	path = sile-git
 	url = ssh+git://aur@aur4.archlinux.org/sile-git.git/
+[submodule "sile"]
+	path = sile
+	url = ssh+git://aur@aur4.archlinux.org/sile.git
