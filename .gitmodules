@@ -82,3 +82,6 @@
 [submodule "wacom-utility"]
 	path = wacom-utility
 	url = ssh+git://aur@aur4.archlinux.org:22/wacom-utility.git/
+[submodule "sile-git"]
+	path = sile-git
+	url = ssh+git://aur@aur4.archlinux.org/sile-git.git/
